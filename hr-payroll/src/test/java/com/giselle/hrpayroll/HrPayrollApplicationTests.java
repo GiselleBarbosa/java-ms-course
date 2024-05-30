@@ -1,4 +1,4 @@
-package com.giselle.hr_payroll;
+package com.giselle.hrpayroll;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
