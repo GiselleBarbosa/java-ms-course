@@ -1,10 +1,11 @@
-## java-ms-course
+### Curso Microsserviços Java com Spring Boot e Spring Cloud
 
-### Microsserviços Java com Spring Boot e Spring Cloud
-> Versões: *Java 11 e Spring Boot 2.3.4*
+>[!NOTE]
+>
+>Versões: Java 11 e Spring Boot 2.3.4
+>
+>Referência:  https://www.udemy.com/user/nelio-alves
 
-> Referência: 
-> https://www.udemy.com/user/nelio-alves
 
 ### Checklist baixar e executar projeto pronto
 
