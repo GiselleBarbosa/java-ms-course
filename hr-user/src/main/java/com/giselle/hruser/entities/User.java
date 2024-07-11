@@ -1,4 +1,4 @@
-package com.giselle.hr_user.entities;
+package com.giselle.hruser.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package com.giselle.hr_user;
+package com.giselle.hruser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

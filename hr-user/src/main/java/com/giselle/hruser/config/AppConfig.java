@@ -1,4 +1,4 @@
-package com.giselle.hr_user.config;
+package com.giselle.hruser.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

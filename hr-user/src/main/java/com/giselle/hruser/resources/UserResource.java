@@ -1,7 +1,7 @@
-package com.giselle.hr_user.resources;
+package com.giselle.hruser.resources;
 
-import com.giselle.hr_user.entities.User;
-import com.giselle.hr_user.repositories.UserRepository;
+import com.giselle.hruser.entities.User;
+import com.giselle.hruser.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

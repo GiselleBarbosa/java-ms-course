@@ -1,4 +1,4 @@
-package com.giselle.hr_user;
+package com.giselle.hruser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
