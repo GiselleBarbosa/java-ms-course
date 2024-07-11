@@ -1,6 +1,6 @@
 package com.giselle.hroauth.resources;
 
-import com.giselle.hroauth.UserService;
+import com.giselle.hroauth.services.UserService;
 import com.giselle.hroauth.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +25,5 @@ public class UserResource {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-
     }
 }
