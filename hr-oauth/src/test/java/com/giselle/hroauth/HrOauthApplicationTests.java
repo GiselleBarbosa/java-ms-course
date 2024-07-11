@@ -1,4 +1,4 @@
-package com.giselle.hr_oauth;
+package com.giselle.hroauth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
