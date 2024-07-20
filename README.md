@@ -23,7 +23,7 @@ ADD ./target/hr-config-server-0.0.1-SNAPSHOT.jar hr-config-server.jar
 ENTRYPOINT ["java","-jar","/hr-config-server.jar"]
 ``` 
 ```
-mvnw clean package
+./mvnw clean package
 
 docker build -t hr-config-server:v1 .
 
