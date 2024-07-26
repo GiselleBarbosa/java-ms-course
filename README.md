@@ -12,9 +12,9 @@
 - JDK 11, variáveis PATH e JAVA_HOME
 - Configurar IDE para pegar Java 11
 - Importar projetos na IDE
-- Configurar credenciais do config server
-    - Modelo do curso: https://github.com/acenelio/ms-course-configs e
-      `https://github.com/GiselleBarbosa/ms-course-configs`
+- Configurar credenciais do config server:
+    - https://github.com/acenelio/ms-course-configs e
+    https://github.com/GiselleBarbosa/ms-course-configs
 - Preparar Postman (collection e environment)
 - Subir projetos em ordem:
     - Config server
