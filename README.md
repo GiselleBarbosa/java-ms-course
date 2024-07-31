@@ -58,7 +58,7 @@ ENTRYPOINT ["java","-jar","/hr-worker.jar"]
 
 docker build -t hr-worker:v1 .
 
-docker run -P --network hr-net hr-worker:v1
+docker run -P --network hr-net --name hr-worker hr-worker:v1
 ```
 
 ### hr-user
@@ -73,7 +73,7 @@ ENTRYPOINT ["java","-jar","/hr-user.jar"]
 
 docker build -t hr-user:v1 .
 
-docker run -P --network hr-net hr-user:v1
+docker run -P --network hr-net --name hr-user hr-user:v1
 ```
 
 ### hr-payroll
@@ -88,7 +88,7 @@ ENTRYPOINT ["java","-jar","/hr-payroll.jar"]
 
 docker build -t hr-payroll:v1 .
 
-docker run -P --network hr-net hr-payroll:v1
+docker run -P --network hr-net --name hr-payroll hr-payroll:v1
 ```
 
 ### hr-oauth
@@ -103,7 +103,7 @@ ENTRYPOINT ["java","-jar","/hr-oauth.jar"]
 
 docker build -t hr-oauth:v1 .
 
-docker run -P --network hr-net hr-oauth:v1
+docker run -P --network hr-net --name hr-oauth hr-oauth:v1
 ```
 
 ### hr-api-gateway-zuul
