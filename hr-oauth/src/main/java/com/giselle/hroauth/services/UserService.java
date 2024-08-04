@@ -1,7 +1,7 @@
 package com.giselle.hroauth.services;
 
 import com.giselle.hroauth.entities.User;
-import com.giselle.hroauth.feingclients.UserFeingClient;
+import com.giselle.hroauth.feignclients.UserFeignClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,11 @@ public class UserService implements UserDetailsService {
     private static Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
-    UserFeingClient userFeingClient;
+    UserFeignClient userFeignClient;
 
 
     public User findByEmail(String email) {
-        User user = userFeingClient.findByEmail(email).getBody();
+        User user = userFeignClient.findByEmail(email).getBody();
 
         if (user == null) {
             logger.error("Email not found = " + email);
@@ -33,7 +33,7 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userFeingClient.findByEmail(username).getBody();
+        User user = userFeignClient.findByEmail(username).getBody();
 
         if (user == null) {
             logger.error("Username not found = " + username);

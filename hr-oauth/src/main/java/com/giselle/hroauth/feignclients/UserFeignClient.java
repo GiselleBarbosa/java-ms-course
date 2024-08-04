@@ -1,4 +1,4 @@
-package com.giselle.hroauth.feingclients;
+package com.giselle.hroauth.feignclients;
 
 import com.giselle.hroauth.entities.User;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
 @FeignClient(name = "hr-user", path = "/users")
-public interface UserFeingClient {
+public interface UserFeignClient {
 
     @GetMapping(value = "/search")
     ResponseEntity<User> findByEmail(@RequestParam String email);
