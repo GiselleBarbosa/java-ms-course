@@ -1,3 +1,10 @@
+>[!TIP]
+> Utilize o comando abaixo para facilitar a criação dos containers:
+> ~~~
+> docker-compose -p ms-full-container up --build
+> ~~~
+
+
 ## Criando e testando containers Docker
 
 ### Criar rede docker para sistema hr
