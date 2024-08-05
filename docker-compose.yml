@@ -1,0 +1,107 @@
+version: '3.9'
+
+services:
+  hr-worker-pg12:
+    image: postgres:12-alpine
+    container_name: hr-worker-pg12
+    environment:
+      POSTGRES_PASSWORD: 1234567
+      POSTGRES_DB: db_hr_worker
+    networks:
+      - hr-net
+    ports:
+      - "5432:5432"
+
+  hr-user-pg12:
+    image: postgres:12-alpine
+    container_name: hr-user-pg12
+    environment:
+      POSTGRES_PASSWORD: 1234567
+      POSTGRES_DB: db_hr_user
+    networks:
+      - hr-net
+    ports:
+      - "5433:5432"
+    depends_on:
+      - hr-worker-pg12
+
+  hr-config-server:
+    build:
+      context: ./hr-config-server
+      dockerfile: Dockerfile
+    container_name: hr-config-server
+    image: hr-config-server
+    networks:
+      - hr-net
+    ports:
+      - "8888:8888"
+    environment:
+      GITHUB_USERNAME: SEU_USERNAME_AQUI
+      GITHUB_TOKEN: SEU_TOKEN_AQUI
+    depends_on:
+      - hr-worker-pg12
+      - hr-user-pg12
+
+  hr-eureka-server:
+    build:
+      context: ./hr-eureka-server
+      dockerfile: Dockerfile
+    container_name: hr-eureka-server
+    image: hr-eureka-server
+    networks:
+      - hr-net
+    ports:
+      - "8761:8761"
+    depends_on:
+      - hr-config-server
+
+  hr-api-gateway-zuul:
+    build:
+      context: ./hr-api-gateway-zuul
+      dockerfile: Dockerfile
+    container_name: hr-api-gateway-zuul
+    image: hr-api-gateway-zuul
+    networks:
+      - hr-net
+    ports:
+      - "8765:8765"
+
+  hr-oauth:
+    build:
+      context: ./hr-oauth
+      dockerfile: Dockerfile
+    container_name: hr-oauth
+    image: hr-oauth
+    networks:
+      - hr-net
+
+  hr-payroll:
+    build:
+      context: ./hr-payroll
+      dockerfile: Dockerfile
+    container_name: hr-payroll
+    image: hr-payroll
+    networks:
+      - hr-net
+
+  hr-user:
+    build:
+      context: ./hr-user
+      dockerfile: Dockerfile
+    container_name: hr-user
+    image: hr-user
+    networks:
+      - hr-net
+
+  hr-worker:
+    build:
+      context: ./hr-worker
+      dockerfile: Dockerfile
+    container_name: hr-worker
+    image: hr-worker
+    networks:
+      - hr-net
+
+networks:
+  hr-net:
+    driver: bridge
